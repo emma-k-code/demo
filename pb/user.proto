@@ -1,0 +1,21 @@
+syntax = "proto3";  
+// Golang package
+package pb;
+
+// UserService 定義會員相關的服務
+service UserService {
+    // Get 取會員資料
+    rpc Get (UserGetRequest) returns (UserResponse) {}
+}
+
+// UserGetRequest 取會員資料參數
+message UserGetRequest {  
+    int64  id       = 1;
+}
+
+// UserResponse 會員資料
+message UserResponse {  
+    int64  id       = 1;
+    string username = 2;
+}
+
